@@ -40,7 +40,7 @@ public class CadastroRestauranteService {
 			restauranteRepository.remover(id);
 		} catch (EmptyResultDataAccessException e) {
 			throw new EntidadeNaoEncontradaException(
-					String.format("Não existe um cadastro de restaurante com o código $d", id));
+					String.format("Não existe um cadastro de restaurante com o código %d", id));
 		} catch (DataIntegrityViolationException e) {
 			throw new EntidadeEmUsoException(
 					String.format("Restaurante de código %d não pode ser removida, pois está em uso.", id));
